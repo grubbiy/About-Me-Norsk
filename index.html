@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vegard | Om Meg</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Header / Profile Section -->
+    <header>
+      <img src="profile.jpg" alt="Profilbilde" class="profile-pic">
+      <h1>Vegard Laland</h1>
+      <h2>Aspirerende IT-sikkerhet/Arkitekt & Utvikler</h2>
+      <p class="tagline">"Designer teknologi som er både sikker og betydningsfull."</p>
+    </header>
+
+    <!-- Contact Info -->
+    <section class="contact">
+      <h3>Kontakt</h3>
+      <ul>
+        <li>E-post: <a href="mailto:vegardlaland@gmail.com">vegardlaland@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/grubbiy" target="_blank">github.com/grubbiy</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/vegard-laland-173797368/" target="_blank">linkedin.com/in/vegard-laland</a></li>
+        <li>Sted: Bryne, Norge</li>
+      </ul>
+    </section>
+
+    <!-- About Me -->
+    <section class="about">
+      <h3>Om Meg</h3>
+      <p>
+        Jeg er elev ved Gand VGS og tar IT (Informasjonsteknologi).
+        Jeg er lidenskapelig opptatt av CSRedTeaming, CSArkitektur og å utvikle robuste applikasjoner.
+        Jeg mener at alle bør være trygge på nett og ha tilgang til bedre teknologi.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills">
+      <h3>Ferdigheter</h3>
+      <ul>
+        <li>HTML & CSS (Grunnleggende)</li>
+        <li>Python (Dataanalyse, automatisering, AI-grunnlag)</li>
+        <li>Nettverk, IT-sikkerhet, Ziglang, C# & C (lærer)</li>
+        <li>Linux & Arch Linux-oppsett</li>
+      </ul>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience">
+      <h3>Erfaring</h3>
+      <div class="job">
+        <h4>Avinor, Sola Lufthavn — IT-tekniker praksis</h4>
+        <span class="date">1 uke • 2023</span>
+        <p>
+          Assisterte med IT-drift på flyplassen, lærte om systeminfrastruktur, ventilasjonssystemer, 
+          solenergi og grønn kraft, og praktisk feilsøking i et profesjonelt miljø.
+        </p>
+      </div>
+      <div class="job">
+          <h4>Time Kommune, Vardheia Ungdomsskule — IT-tekniker praksis</h4>
+          <span class="date">10 måneder • 2024 - 2025</span>
+          <p>
+            Jeg har organisert og systematisert ulike maskiner brukt av skolen, 
+            jobbet med organisatoriske oppgaver knyttet til utforming av rommet, 
+            og hjulpet med å strukturere programvare og systemer som brukes der. 
+            Jeg har hatt hovedansvar for å implementere et helt nytt system på alle maskinene, 
+            noe som krevde at jeg satte meg inn i systemets struktur, 
+            administrativt arbeid og rettigheter, samt andre oppgaver knyttet til programvare og maskinvare.
+          </p>
+      </div>
+                                                                      
+    </section>
+
+
+
+    <!-- Education -->
+    <section class="education">
+      <h3>Utdanning</h3>
+      <p><strong>Bryne Skule, Vardheia Ungdomsskule</strong> - Grunnskole (2014 - 2024)</p>
+      <p><strong>Gand VGS</strong> — IT & Medieproduksjon (2024–2025) - IT (2025-202X)</p>
+    </section>
+
+        <!-- Karakter -->
+     <section class="character">
+      <label for="school-select"><strong>Velg skole:</strong></label>
+      <select id="school-select" onchange="showGrades()">
+        <option value="vardheia">Vardheia Ungdomsskule</option>
+        <option value="gandvgs">Gand VG1 IM</option>
+      </select>
+      <div id="vardheia-grades" class="character">
+        <h4>Vardheia Ungdomsskule</h4>
+          <span class="date">3 år • 2021 - 2024</span>
+        <div class="character-list">
+          <p>Norsk Nynorsk - 3</p>
+          <p>Norsk Bokmål - 3</p>
+          <p>Norsk Muntlig - 4</p>
+          <p>Engelsk - 5</p>
+          <p>Matematikk - 4</p>
+          <p>Naturfag - 4</p>
+          <p>Samfunnsfag - 4</p>
+          <p>Gym - 4</p>
+          <p>Religion - 4</p>
+          <p>Spansk - 4</p>
+        </div>
+      </div>
+      <div id="gandvg1im-grades" class="character" style="display:none;">
+        <h4>Gand VG 1, IM</h4>
+          <span class="date">1 år • 2024 - 2025</span>
+        <div class="character-list">
+          <p>Medieproduksjon - 3</p>
+          <p>Programmering - 6</p>
+          <p>YFF - 6</p>
+          <p>Engelsk - 5</p>
+          <p>Matematikk - 5</p>
+          <p>Naturfag - 4</p>
+          <p>Gym - 4</p>
+          <p>Teknologi - 4</p>
+        </div>
+      </div>
+
+    </section>
+
+    <script>
+    function showGrades() {
+      var select = document.getElementById('school-select');
+      var vardheia = document.getElementById('vardheia-grades');
+      var gandvgs = document.getElementById('gandvg1im-grades');
+      // Hide all grade lists first
+      vardheia.style.display = 'none';
+      gandvgs.style.display = 'none';
+      // Show selected
+      if (select.value === 'vardheia') vardheia.style.display = 'block';
+      if (select.value === 'gandvgs') gandvgs.style.display = 'block';
+    }
+    window.onload = showGrades; // Show default on load
+    </script>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Vegard. Laget med ❤️ ved hjelp av GitHub Pages.</p>
+    </footer>
+  </div>
+</body>
+</html>
