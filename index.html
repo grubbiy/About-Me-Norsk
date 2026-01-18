@@ -2,145 +2,326 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vegard | Om Meg</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vegard Laland | Om meg</title>
+  <meta name="description" content="Ærleg, enkel portefølje for Vegard Laland (grubbiy) med prosjektstatus, ferdigheiter og lab-oversikt." />
+  <meta property="og:title" content="Vegard Laland (grubbiy)" />
+  <meta property="og:description" content="IT-student med fokus på cybersikkerheit, Zig og skule-lab. Prosjektstatus er ærleg og tydeleg." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpg" />
+  <script>
+    (() => {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = storedTheme || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <!-- Header / Profile Section -->
-    <header>
-      <img src="profile.jpg" alt="Profilbilde" class="profile-pic">
-      <h1>Vegard Laland</h1>
-      <h2>Aspirerende IT-sikkerhet/Arkitekt & Utvikler</h2>
-      <p class="tagline">"Designer teknologi som er både sikker og betydningsfull."</p>
+  <div class="page">
+    <header class="site-header">
+      <nav class="nav" aria-label="Hovedmeny" data-i18n-aria="nav.aria">
+        <a class="logo" href="#top">Vegard</a>
+        <div class="nav-links">
+          <a href="#about" data-i18n="nav.about">Om</a>
+          <a href="#projects" data-i18n="nav.projects">Prosjekt</a>
+          <a href="#skills" data-i18n="nav.skills">Ferdigheiter</a>
+          <a href="#experience" data-i18n="nav.experience">Erfaring</a>
+          <a href="#lab" data-i18n="nav.lab">Lab</a>
+          <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+        </div>
+        <div class="nav-actions">
+          <button class="toggle" id="theme-toggle" type="button" aria-label="Bytt tema" data-i18n-aria="toggle.themeAria">Mørk</button>
+          <button class="toggle" id="lang-toggle" type="button" aria-label="Bytt språk" data-i18n-aria="toggle.langAria">EN</button>
+        </div>
+      </nav>
     </header>
 
-    <!-- Contact Info -->
-    <section class="contact">
-      <h3>Kontakt</h3>
-      <ul>
-        <li>E-post: <a href="mailto:vegardlaland@gmail.com">vegardlaland@gmail.com</a></li>
-        <li>GitHub: <a href="https://github.com/grubbiy" target="_blank">github.com/grubbiy</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/vegard-laland-173797368/" target="_blank">linkedin.com/in/vegard-laland</a></li>
-        <li>Sted: Bryne, Norge</li>
-      </ul>
-    </section>
-
-    <!-- About Me -->
-    <section class="about">
-      <h3>Om Meg</h3>
-      <p>
-        Jeg er elev ved Gand VGS og tar IT (Informasjonsteknologi).
-        Jeg er lidenskapelig opptatt av CSRedTeaming, CSArkitektur og å utvikle robuste applikasjoner.
-        Jeg mener at alle bør være trygge på nett og ha tilgang til bedre teknologi.
-      </p>
-    </section>
-
-    <!-- Skills -->
-    <section class="skills">
-      <h3>Ferdigheter</h3>
-      <ul>
-        <li>HTML & CSS (Grunnleggende)</li>
-        <li>Python (Dataanalyse, automatisering, AI-grunnlag)</li>
-        <li>Nettverk, IT-sikkerhet, Ziglang, C# & C (lærer)</li>
-        <li>Linux & Arch Linux-oppsett</li>
-      </ul>
-    </section>
-
-    <!-- Experience -->
-    <section class="experience">
-      <h3>Erfaring</h3>
-      <div class="job">
-        <h4>Avinor, Sola Lufthavn — IT-tekniker praksis</h4>
-        <span class="date">1 uke • 2023</span>
-        <p>
-          Assisterte med IT-drift på flyplassen, lærte om systeminfrastruktur, ventilasjonssystemer, 
-          solenergi og grønn kraft, og praktisk feilsøking i et profesjonelt miljø.
-        </p>
-      </div>
-      <div class="job">
-          <h4>Time Kommune, Vardheia Ungdomsskule — IT-tekniker praksis</h4>
-          <span class="date">10 måneder • 2024 - 2025</span>
-          <p>
-            Jeg har organisert og systematisert ulike maskiner brukt av skolen, 
-            jobbet med organisatoriske oppgaver knyttet til utforming av rommet, 
-            og hjulpet med å strukturere programvare og systemer som brukes der. 
-            Jeg har hatt hovedansvar for å implementere et helt nytt system på alle maskinene, 
-            noe som krevde at jeg satte meg inn i systemets struktur, 
-            administrativt arbeid og rettigheter, samt andre oppgaver knyttet til programvare og maskinvare.
+    <main>
+      <section class="hero reveal" id="top">
+        <div class="hero-content">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Om meg</p>
+          <h1>Vegard Laland (grubbiy)</h1>
+          <p class="tagline" data-i18n="hero.tagline">Student IT • Cybersecurity • Zig • Homelab/Proxmox</p>
+          <p class="intro" data-i18n="hero.intro">
+            IT-student med fokus på læring, trygg teknologi og praktiske demoar.
           </p>
-      </div>
-                                                                      
-    </section>
-
-
-
-    <!-- Education -->
-    <section class="education">
-      <h3>Utdanning</h3>
-      <p><strong>Bryne Skule, Vardheia Ungdomsskule</strong> - Grunnskole (2014 - 2024)</p>
-      <p><strong>Gand VGS</strong> — IT & Medieproduksjon (2024–2025) - IT (2025-202X)</p>
-    </section>
-
-        <!-- Karakter -->
-     <section class="character">
-      <label for="school-select"><strong>Velg skole:</strong></label>
-      <select id="school-select" onchange="showGrades()">
-        <option value="vardheia">Vardheia Ungdomsskule</option>
-        <option value="gandvgs">Gand VG1 IM</option>
-      </select>
-      <div id="vardheia-grades" class="character">
-        <h4>Vardheia Ungdomsskule</h4>
-          <span class="date">3 år • 2021 - 2024</span>
-        <div class="character-list">
-          <p>Norsk Nynorsk - 3</p>
-          <p>Norsk Bokmål - 3</p>
-          <p>Norsk Muntlig - 4</p>
-          <p>Engelsk - 5</p>
-          <p>Matematikk - 4</p>
-          <p>Naturfag - 4</p>
-          <p>Samfunnsfag - 4</p>
-          <p>Gym - 4</p>
-          <p>Religion - 4</p>
-          <p>Spansk - 4</p>
+        <div class="cta-group">
+          <a class="btn primary" href="https://github.com/grubbiy" target="_blank" rel="noopener" data-i18n="cta.github">GitHub</a>
+          <a class="btn ghost" href="#projects" data-i18n="cta.projects">Prosjekt</a>
+          <a class="btn ghost" href="#contact" data-i18n="cta.contact">Kontakt</a>
         </div>
-      </div>
-      <div id="gandvg1im-grades" class="character" style="display:none;">
-        <h4>Gand VG 1, IM</h4>
-          <span class="date">1 år • 2024 - 2025</span>
-        <div class="character-list">
-          <p>Medieproduksjon - 3</p>
-          <p>Programmering - 6</p>
-          <p>YFF - 6</p>
-          <p>Engelsk - 5</p>
-          <p>Matematikk - 5</p>
-          <p>Naturfag - 4</p>
-          <p>Gym - 4</p>
-          <p>Teknologi - 4</p>
+        <p class="helper" data-i18n="hero.helper">AI er eit verktøy eg brukar for å bygge raskt og lære betre.</p>
+
         </div>
-      </div>
+        <div class="hero-image">
+          <img src="profile.jpg" alt="Profilbilde av Vegard Laland" data-i18n-alt="hero.photoAlt" width="180" height="180" loading="lazy" />
+        </div>
+      </section>
 
-    </section>
+      <section class="reality-check reveal">
+        <p data-i18n="reality.text">
+          Eg byggjer raskt med AI-hjelp, og brukar det aktivt for å lære. Prosjekta under har tydeleg status (idé / planlagt / prototype / i arbeid).
+        </p>
+      </section>
 
-    <script>
-    function showGrades() {
-      var select = document.getElementById('school-select');
-      var vardheia = document.getElementById('vardheia-grades');
-      var gandvgs = document.getElementById('gandvg1im-grades');
-      // Hide all grade lists first
-      vardheia.style.display = 'none';
-      gandvgs.style.display = 'none';
-      // Show selected
-      if (select.value === 'vardheia') vardheia.style.display = 'block';
-      if (select.value === 'gandvgs') gandvgs.style.display = 'block';
-    }
-    window.onload = showGrades; // Show default on load
-    </script>
+      <section class="section about reveal" id="about">
+        <div class="section-header">
+          <h2 data-i18n="section.about.title">Om</h2>
+          <p data-i18n="section.about.subtitle">Kort, ærleg oversikt over kva eg kan og kva eg lærer no.</p>
+        </div>
+        <div class="about-grid">
+          <p data-i18n="about.p1">
+            Eg er ein motivert IT-student som likar cybersikkerheit, logging/monitorering og små lab-demoar. Eg er open om at eg framleis byggjer grunnleggande ferdigheiter.
+          </p>
+          <p data-i18n="about.p2">
+            AI-verktøy gir meg tempo og læring, men eg jobbar aktivt med å forstå kjernen i det eg byggjer. Eg er nysgjerrig, lærer raskt og er svært motivert.
+          </p>
+        </div>
+        <ul class="about-list">
+          <li data-i18n="about.li1">Zig er eit læringsprosjekt; mykje av øvingskoden er skriven av meg.</li>
+          <li data-i18n="about.li2">Nettverk: grunnleggande forståing (ikkje ekspert).</li>
+          <li data-i18n="about.li3">Proxmox/VMs: får meir og meir kontroll og erfaring.</li>
+          <li data-i18n="about.li4">Logging/monitorering: kan setje opp med AI-hjelp, framleis i læring.</li>
+        </ul>
+      </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>© 2025 Vegard. Laget med ❤️ ved hjelp av GitHub Pages.</p>
+      <section class="section projects reveal" id="projects">
+        <div class="section-header">
+          <h2 data-i18n="section.projects.title">Prosjekt</h2>
+          <p data-i18n="section.projects.subtitle">Status er ærleg: fleire idear er planlagt eller ikkje starta enno.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal" style="--delay: 0.05s;">
+            <div class="project-header">
+              <h3 data-i18n="projects.miniSoc.title">Mini-SOC AI</h3>
+              <span class="status status-planned" data-i18n="projects.miniSoc.status">Planlagt / ikkje starta</span>
+            </div>
+            <p data-i18n="projects.miniSoc.desc">
+              Framtidig Mini-SOC demo for å samle loggar, lage AI-samandrag og enkle hendingsrapportar i ein trygg, read-only lab.
+            </p>
+            <div class="project-meta">
+              <h4 data-i18n="projects.techFocus">Teknisk fokus</h4>
+              <ul>
+                <li data-i18n="projects.miniSoc.tech1">Logginnsamling (lab) og grunnleggande parsing</li>
+                <li data-i18n="projects.miniSoc.tech2">AI-oppsummering og prioritering</li>
+                <li data-i18n="projects.miniSoc.tech3">Rapportmal og tidslinjevising</li>
+              </ul>
+              <h4 data-i18n="projects.nextSteps">Neste steg</h4>
+              <ul>
+                <li data-i18n="projects.miniSoc.next1">Skissere datamodell og loggformat</li>
+                <li data-i18n="projects.miniSoc.next2">Bygge ein liten dummy-datastraum</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--delay: 0.1s;">
+            <div class="project-header">
+              <h3 data-i18n="projects.pentest.title">Pentest AI Killer</h3>
+              <span class="status status-planned" data-i18n="projects.pentest.status">Planlagt / ikkje starta</span>
+            </div>
+            <p data-i18n="projects.pentest.desc">
+              Konsept for ein etisk, lab-only assistent som hjelper med sjekklister, dokumentasjon og rapportering i kontrollerte miljø.
+            </p>
+            <div class="project-meta">
+              <h4 data-i18n="projects.techFocus">Teknisk fokus</h4>
+              <ul>
+                <li data-i18n="projects.pentest.tech1">Etisk rammeverk og avgrensa scope</li>
+                <li data-i18n="projects.pentest.tech2">Rapportering og risikovurdering</li>
+                <li data-i18n="projects.pentest.tech3">Trygge lab-scenario</li>
+              </ul>
+              <h4 data-i18n="projects.nextSteps">Neste steg</h4>
+              <ul>
+                <li data-i18n="projects.pentest.next1">Definere brukstilfelle og grenser</li>
+                <li data-i18n="projects.pentest.next2">Lage ein safe demo utan skade</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--delay: 0.15s;">
+            <div class="project-header">
+              <h3 data-i18n="projects.vfe.title">VOD/eSports analysis app (VFE)</h3>
+              <span class="status status-prototype" data-i18n="projects.vfe.status">Prototype (AI-generert)</span>
+            </div>
+            <p data-i18n="projects.vfe.desc">
+              Dette vart i stor grad generert av AI; mi rolle var å styre/orkestrere, teste og definere krav. Det er ein tidleg prototype for analyse av VOD og statistikk.
+            </p>
+            <div class="project-meta">
+              <h4 data-i18n="projects.techFocus">Teknisk fokus</h4>
+              <ul>
+                <li data-i18n="projects.vfe.tech1">Agent-orkestrering og kravstyring</li>
+                <li data-i18n="projects.vfe.tech2">Metadata-tagging og analyseflyt</li>
+                <li data-i18n="projects.vfe.tech3">Frontend-prototype og UX</li>
+              </ul>
+              <h4 data-i18n="projects.nextSteps">Neste steg</h4>
+              <ul>
+                <li data-i18n="projects.vfe.next1">Rydde scope og dokumentere beslutningar</li>
+                <li data-i18n="projects.vfe.next2">Teste mot ekte brukarbehov</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--delay: 0.2s;">
+            <div class="project-header">
+              <h3 data-i18n="projects.hastevpn.title">HasteVPN</h3>
+              <span class="status status-concept" data-i18n="projects.hastevpn.status">Konsept / design-idé</span>
+            </div>
+            <p data-i18n="projects.hastevpn.desc">
+              Konsept for ei VPN-marknadsplass med enkel onboarding og tydelege sikkerheitsval. Ikkje bygd, berre design-idéar.
+            </p>
+            <div class="project-meta">
+              <h4 data-i18n="projects.techFocus">Teknisk fokus</h4>
+              <ul>
+                <li data-i18n="projects.hastevpn.tech1">Onboarding-flyt og tillit</li>
+                <li data-i18n="projects.hastevpn.tech2">Sikkerheitskrav og vurderingar</li>
+                <li data-i18n="projects.hastevpn.tech3">Brukaroppleving og ansvar</li>
+              </ul>
+              <h4 data-i18n="projects.nextSteps">Neste steg</h4>
+              <ul>
+                <li data-i18n="projects.hastevpn.next1">Skissere brukarreise og risiko</li>
+                <li data-i18n="projects.hastevpn.next2">Sjekke kva som krev compliance</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills reveal" id="skills">
+        <div class="section-header">
+          <h2 data-i18n="section.skills.title">Ferdigheiter</h2>
+          <p data-i18n="section.skills.subtitle">Komfortnivå og kort forklaring for kvar ferdigheit.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card reveal" style="--delay: 0.05s;">
+            <div class="skill-top">
+              <span class="chip" data-i18n="skills.ai.name">AI-assistert utvikling</span>
+              <span class="level level-comfortable" data-i18n="levels.comfortable">Komfortabel</span>
+            </div>
+            <p data-i18n="skills.ai.desc">Brukar AI dagleg for å lære og bygge raskare.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay: 0.1s;">
+            <div class="skill-top">
+              <span class="chip" data-i18n="skills.zig.name">Zig</span>
+              <span class="level level-developing" data-i18n="levels.developing">Utviklande</span>
+            </div>
+            <p data-i18n="skills.zig.desc">Læringsprosjekt; mykje eigenkoding i Zig.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay: 0.15s;">
+            <div class="skill-top">
+              <span class="chip" data-i18n="skills.linux.name">Linux (Arch)</span>
+              <span class="level level-developing" data-i18n="levels.developing">Utviklande</span>
+            </div>
+            <p data-i18n="skills.linux.desc">Dagleg bruk, grunnleggande drift og feilsøking.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay: 0.2s;">
+            <div class="skill-top">
+              <span class="chip" data-i18n="skills.proxmox.name">Proxmox/VMs</span>
+              <span class="level level-developing" data-i18n="levels.developing">Utviklande</span>
+            </div>
+            <p data-i18n="skills.proxmox.desc">Får meir og meir kontroll på VM-oppsett.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay: 0.25s;">
+            <div class="skill-top">
+              <span class="chip" data-i18n="skills.network.name">Nettverk</span>
+              <span class="level level-beginner" data-i18n="levels.beginner">Nybegynnar</span>
+            </div>
+            <p data-i18n="skills.network.desc">Grunnleggande forståing av adressering og routing.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay: 0.3s;">
+            <div class="skill-top">
+              <span class="chip" data-i18n="skills.logging.name">Logging/monitorering</span>
+              <span class="level level-developing" data-i18n="levels.developing">Utviklande</span>
+            </div>
+            <p data-i18n="skills.logging.desc">Kan setje opp med AI-hjelp, lærer vidare.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay: 0.35s;">
+            <div class="skill-top">
+              <span class="chip" data-i18n="skills.web.name">Web fundamentals</span>
+              <span class="level level-beginner" data-i18n="levels.beginner">Nybegynnar</span>
+            </div>
+            <p data-i18n="skills.web.desc">HTML/CSS/JS basics, byggjer enkle sider.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience reveal" id="experience">
+        <div class="section-header">
+          <h2 data-i18n="section.experience.title">Erfaring</h2>
+          <p data-i18n="section.experience.subtitle">Trygg, ikkje-sensitiv oversikt.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal" style="--delay: 0.05s;">
+            <span class="time" data-i18n="exp.green.time">No – pågåande</span>
+            <div class="timeline-content">
+              <h3 data-i18n="exp.green.title">IT Student – Green Mountain</h3>
+              <p data-i18n="exp.green.desc">Praktisk læring, IT-oppgåver og innblikk i profesjonelt miljø. Ingen interne detaljar.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" style="--delay: 0.1s;">
+            <span class="time" data-i18n="exp.school.time">2025 – pågåande</span>
+            <div class="timeline-content">
+              <h3 data-i18n="exp.school.title">VG2 IT – Gand vidaregåande skule</h3>
+              <p data-i18n="exp.school.desc">Skuleløp med fokus på IT-grunnlag og praktiske oppgåver.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" style="--delay: 0.15s;">
+            <span class="time" data-i18n="exp.avinor.time">2023 • 1 veke</span>
+            <div class="timeline-content">
+              <h3 data-i18n="exp.avinor.title">Driftsteknikar (jobbuke) – Avinor, Sola flyplass</h3>
+              <p data-i18n="exp.avinor.desc">Assisterte med IT-drift og feilsøking i profesjonelt miljø.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section lab reveal" id="lab">
+        <div class="section-header">
+          <h2 data-i18n="section.lab.title">Skule-lab i Proxmox</h2>
+          <p data-i18n="section.lab.subtitle">Labben er bygd for kursarbeid og læring, ikkje som enterprise-homelab.</p>
+        </div>
+        <div class="lab-content">
+          <p data-i18n="lab.desc">
+            Dette er ei skule-lab i Proxmox der eg testar grunnleggande drift, trygging og monitorering i kontrollerte oppsett.
+          </p>
+          <div class="lab-stack">
+            <h3 data-i18n="lab.stackTitle">Stack (høgt nivå)</h3>
+            <ul>
+              <li data-i18n="lab.stack1">pfSense for routing og segmentering</li>
+              <li data-i18n="lab.stack2">TrueNAS for lagring og deling</li>
+              <li data-i18n="lab.stack3">Windows Server/AD (lab)</li>
+              <li data-i18n="lab.stack4">Ubuntu-tenester og enkle automasjonar</li>
+              <li data-i18n="lab.stack5">Logg-pipeline og AI-verktøy-eksperiment</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact reveal" id="contact">
+        <div class="section-header">
+          <h2 data-i18n="section.contact.title">Kontakt</h2>
+          <p data-i18n="section.contact.subtitle">Enkle knappar, ingen skjema.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="https://github.com/grubbiy" target="_blank" rel="noopener" data-i18n="contact.github">GitHub</a>
+          <a class="btn ghost disabled" href="#" aria-disabled="true" data-i18n="contact.linkedin" data-i18n-title="contact.placeholder" title="Placeholder">LinkedIn (placeholder)</a>
+          <a class="btn ghost disabled" href="#" aria-disabled="true" data-i18n="contact.email" data-i18n-title="contact.placeholder" title="Placeholder">E-post (placeholder)</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-i18n="footer.note">Laga for GitHub Pages. Statusmerkingar er meinte å vere ærlege.</p>
     </footer>
   </div>
 </body>
