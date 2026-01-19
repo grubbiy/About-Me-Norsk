@@ -118,13 +118,8 @@ button {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(244, 241, 234, 0.78);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-
-html[data-theme="dark"] .site-header {
-  background: rgba(15, 19, 21, 0.85);
+  padding: 0.6rem 0.4rem;
+  background: transparent;
 }
 
 .nav {
@@ -132,7 +127,17 @@ html[data-theme="dark"] .site-header {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1rem 0;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 18px 40px rgba(16, 31, 26, 0.12);
+  backdrop-filter: blur(16px);
+  margin: 0 0.8rem;
+}
+
+html[data-theme="dark"] .nav {
+  background: rgba(18, 24, 27, 0.88);
 }
 
 .logo {
@@ -340,6 +345,16 @@ html[data-theme="dark"] .hero-image img {
   color: var(--muted);
 }
 
+.about-note {
+  margin-top: 1.4rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  box-shadow: 0 12px 28px rgba(16, 31, 26, 0.12);
+}
+
 .reality-check {
   background: var(--surface);
   border-radius: var(--radius-md);
@@ -519,6 +534,15 @@ html[data-theme="dark"] .status-concept {
   gap: 1.4rem;
 }
 
+.lab-detail {
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--muted);
+  box-shadow: 0 12px 26px rgba(16, 31, 26, 0.12);
+}
+
 .lab-stack {
   background: var(--surface-strong);
   border: 1px solid var(--border);
@@ -590,6 +614,8 @@ html[data-theme="dark"] .status-concept {
 @media (max-width: 760px) {
   .nav {
     flex-wrap: wrap;
+    padding: 0.9rem 1.4rem;
+    border-radius: 24px;
   }
 
   .nav-links {
